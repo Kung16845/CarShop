@@ -6,10 +6,11 @@ public class Customer: Person
     private string Cartype;
     private int carvalue;
     private long dayreturn;
+    private int serialnumber;
 
 
     public Customer(string pronound,string name,string surname,string age,string numbercar,string Model,
-    string Brand,string Cartype,int carvalue,long dayreturn) 
+    string Brand,string Cartype,int carvalue,long dayreturn,int serialnumber) 
     :base(pronound,name,surname,age)
     {
         this.numbercar = numbercar;
@@ -18,6 +19,7 @@ public class Customer: Person
         this.Cartype = Cartype;
         this.carvalue = carvalue;
         this.dayreturn = dayreturn;
+        this.serialnumber = serialnumber;
     }
     public string Getnumbercar()
     {
@@ -42,6 +44,10 @@ public class Customer: Person
     public long GetDayreturn()
     {
         return this.dayreturn;
+    }
+     public int Getserialnumber()
+    {
+        return this.serialnumber;
     }
 
 }

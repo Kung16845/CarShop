@@ -27,8 +27,9 @@ public class Program
 
     static void MenuCar()
     {
-        Console.WriteLine("Welcome To Car Rental Office");
-        Console.WriteLine(" 1 : MenuLogin \n 2 : MenuListCar \n 3 : Rent Status" );
+        Console.Clear();
+        Console.WriteLine("Welcome To Car Rental Program");
+        Console.WriteLine(" 1 : MenuLogin \n 2 : Carlist for rent \n 3 : Rent Status" );
         Menu menu = (Menu)(int.Parse(Console.ReadLine()));
         switch(menu)
         {
@@ -49,8 +50,11 @@ public class Program
     }
     static void PrintStatusCustomer()//แสดงข้อมู,ลูกค้าส่วนตัว 
     {
-        Console.Write("Please Input Your Name :");
-        customerlist.SearchStatusYourBookCar(Console.ReadLine());
+        Console.Clear();
+        Console.Write("Please Input Your Serial number:");
+        customerlist.SearchStatusYourBookCar(int.Parse(Console.ReadLine()));
+        Thread.Sleep(5000);
+        MenuCar();
     }
     static void BookatCar()
     {
@@ -58,54 +62,78 @@ public class Program
         vehiclelist.PrintInfoCar(); 
         Console.WriteLine("Choose Car in Catalogue");
         Console.WriteLine("Back to MainMenu : 0");        
-        int numbercar = int.Parse(Console.ReadLine());  
-        Console.Write("Input your amount of rent day : ");
-        int numberday = int.Parse(Console.ReadLine());                
+        int numbercar = int.Parse(Console.ReadLine());            
         if (numbercar == 0)
         {
             MenuCar();
         }
         else if (numbercar == 1)
         {
+            Console.Write("Input your amount of rent day : ");
+            int numberday = int.Parse(Console.ReadLine());      
+            int code = Randompassword();
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000001","Fortuner","Toyota","SUV",5000,CalculateDay(numberday));
+            "000001","Fortuner","Toyota","SUV",5000,CalculateDay(numberday),code);
             customerlist.Addnewcustomer(customer);
-            Console.WriteLine("Recived Order!!!");           
+            Console.WriteLine("Your serial number for check status is {0}",code); 
+            Console.WriteLine("Recived Order!!!");
+            Thread.Sleep(5000);
+                       
         }
         else if (numbercar == 2)
         {
+            Console.Write("Input your amount of rent day : ");
+            int numberday = int.Parse(Console.ReadLine());  
+            int code = Randompassword();    
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000002","Pajero Sports","Mitsubishi","SUV",5000,CalculateDay(numberday));
+            "000002","Pajero Sports","Mitsubishi","SUV",5000,CalculateDay(numberday),code);
             customerlist.Addnewcustomer(customer);
+            Console.WriteLine("Your serial number for check status is {0}",code); 
             Console.WriteLine("Recived Order!!!");            
+            Thread.Sleep(5000);
         }
         else if (numbercar == 3)
         {
+            Console.Write("Input your amount of rent day : ");
+            int numberday = int.Parse(Console.ReadLine());
+            int code = Randompassword();      
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000003","City 1.5","Honda","SUV",5000,CalculateDay(numberday));
+            "000003","City 1.5","Honda","SUV",5000,CalculateDay(numberday),code);
             customerlist.Addnewcustomer(customer);
+            Console.WriteLine("Your serial number for check status is {0}",code); 
             Console.WriteLine("Recived Order!!!");          
+            Thread.Sleep(5000);
         }
         else if (numbercar == 4)
         {
+            Console.Write("Input your amount of rent day : ");
+            int numberday = int.Parse(Console.ReadLine());      
+            int code = Randompassword();
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000004","Almera 1.2","Nissan","SUV",5000,CalculateDay(numberday));
+            "000004","Almera 1.2","Nissan","SUV",5000,CalculateDay(numberday),code);
             customerlist.Addnewcustomer(customer);
+            Console.WriteLine("Your serial number for check status is {0}",code); 
             Console.WriteLine("Recived Order!!!"); 
+            Thread.Sleep(5000);
         }
         else if (numbercar == 5)
         {
+            Console.Write("Input your amount of rent day : ");
+            int numberday = int.Parse(Console.ReadLine());     
+            int code = Randompassword(); 
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000005","Mu-X","ISUZU ","SUV",5000,CalculateDay(numberday));
+            "000005","Mu-X","ISUZU ","SUV",5000,CalculateDay(numberday),code);
             customerlist.Addnewcustomer(customer);
+            Console.WriteLine("Your serial number for check status is {0}",code);    
             Console.WriteLine("Recived Order!!!");      
+            Thread.Sleep(5000);
         } // เลือกรถจอง 
         MenuCar();
     } 
     static void AdminMode()
     {
         Console.Clear();
-        Console.WriteLine(" 1 : Signin New Worker \n 2 : Customers of Data \n 3 : Data All Worker \n 0 : Back To MainMenu");
+        Console.WriteLine(" 1 : Signin New Worker \n 2 : list of Customer \n 3 : list of Worker \n 0 : Back To MainMenu");
         int n = int.Parse(Console.ReadLine());
         if (n == 1)
         {
@@ -113,11 +141,12 @@ public class Program
         }
         else if (n == 2)
         {
+            Console.Clear();
             OutputDataCustomerAdmin();
         }
         else if (n == 3)
         {
-            //ข้อมูลพนักงาน 
+            WorkerData();
         }
         else if (n == 0)
         {
@@ -152,7 +181,7 @@ public class Program
     {      
         Console.Clear();
         Console.WriteLine("Login to AdminMode");
-        Console.WriteLine("Back to MainMenu : exit");
+        Console.WriteLine("Back to MainMenu : type exit");
         Email email = new Email(InputEmail(),InputPassword());
         if (emaillist.login(email.GetEmail(),email.Getpassword()) == "Passed")
         {
@@ -186,6 +215,13 @@ public class Program
     static void OutputDataCustomerAdmin()
     {
         customerlist.ShowCustomerclass();
+        Thread.Sleep(10000);
+        MenuCar();
+    }
+    static void WorkerData()
+    {
+        persondlist.Showworker();
+        Thread.Sleep(10000);
         MenuCar();
     }
     static long CalculateDay(int numberday)
@@ -196,7 +232,8 @@ public class Program
     }
     static string InputPronoun()
     {
-        Console.WriteLine("Type in Pronouns is Mr press 1, Mrs press 2 ,Miss press 3");
+        Console.Clear();
+        Console.WriteLine("Type your Pronouns Mr press 1, Mrs press 2 ,Miss press 3");
         string pronoun = Console.ReadLine();
         if (pronoun == "1" )
         {
@@ -211,6 +248,12 @@ public class Program
             return "Miss";
         }
         return null;
+    }
+    static int Randompassword()
+    {
+        Random rnd = new Random();
+        var serialnumber = rnd.Next(000000,1000000);
+        return serialnumber;
     }
     static string InputName()
     {

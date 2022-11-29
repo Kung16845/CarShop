@@ -13,6 +13,19 @@ public class Persondlist
     {
         this.personList.Add(person);
     }
+
+    public void Showworker()
+        {
+        Console.WriteLine("Information of Every customer.");
+        foreach (Worker worker in this.personList)
+        {
+            Console.WriteLine("--------------------------------------------------");   
+            Console.WriteLine("Type Worker \n {0}.{1} {2} Age : {3} Years Position : {4} "
+            ,worker.Getpronound(),worker.GetName(),worker.Getsurname(),worker.Getage(),worker.GetPosition()); 
+            Console.WriteLine("--------------------------------------------------");   
+        }
+        }
+
     public string checkname(string pronound,string name,string surname)
     {
         string checker = "0";
