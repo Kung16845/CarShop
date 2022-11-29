@@ -35,12 +35,4 @@ public class Persondlist
         }
         return checker;
     }
-    public void ShowPerson()
-    {
-        Console.WriteLine("Information of Everyone");
-        foreach (Person person in this.personList)
-        {         
-            Console.WriteLine("Type Person \n {0} {1} {2} {3}",person.Getpronound(),person.GetName(),person.Getsurname(),person.Getage());
-        }
-    }
 }
