@@ -17,9 +17,13 @@ using System;
         Console.WriteLine("Information of Everyone");
         foreach (Customer customer in this.customerlist)
             {                  
+            Console.WriteLine("--------------------------------------------------");   
             Console.WriteLine("Type Customer \n {0}{1} {2} Age : {3} Years\n Number Car : {4} Brand : {5} Model : {6} Type : {7}"
             ,customer.Getpronound(),customer.GetName(),customer.Getsurname(),customer.Getage()
-            ,customer.Getnumbercar(),customer.GetBrand(),customer.GetModel(),customer.GetCartype());           
+            ,customer.Getnumbercar(),customer.GetBrand(),customer.GetModel(),customer.GetCartype()); 
+            Console.WriteLine("Return day : {0}",new DateTime(customer.GetDayreturn()));
+            Console.WriteLine(new DateTime(customer.GetDayreturn()));
+            Console.WriteLine("--------------------------------------------------");          
             }
         }
         public void SearchStatusYourBookCar(string name)
@@ -28,9 +32,12 @@ using System;
             { 
                 if(name == customer.GetName())
                 {
+                    Console.WriteLine("--------------------------------------------------");   
                     Console.WriteLine("{0}{1} {2} \n Model : {3} Type : {4}",
                     customer.Getpronound(),customer.GetName(),customer.Getsurname()
                     ,customer.GetModel(),customer.GetCartype());
+                    Console.WriteLine("Your return day : {0}",new DateTime(customer.GetDayreturn()));
+                    Console.WriteLine("--------------------------------------------------");   
                 }
             }
         } 

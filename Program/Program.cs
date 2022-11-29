@@ -22,8 +22,9 @@ public class Program
     static void Main(string[] args)
     {
         PreparInfo();
-        MenuCar();   
+        MenuCar();      
     }
+
     static void MenuCar()
     {
         Console.WriteLine("Welcome To Car Rental Office");
@@ -57,7 +58,9 @@ public class Program
         vehiclelist.PrintInfoCar(); 
         Console.WriteLine("Choose Car in Catalogue");
         Console.WriteLine("Back to MainMenu : 0");        
-        int numbercar = int.Parse(Console.ReadLine());                  
+        int numbercar = int.Parse(Console.ReadLine());  
+        Console.Write("Input your amount of rent day : ");
+        int numberday = int.Parse(Console.ReadLine());                
         if (numbercar == 0)
         {
             MenuCar();
@@ -65,35 +68,35 @@ public class Program
         else if (numbercar == 1)
         {
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000001","Fortuner","Toyota","SUV",5000);
+            "000001","Fortuner","Toyota","SUV",5000,CalculateDay(numberday));
             customerlist.Addnewcustomer(customer);
             Console.WriteLine("Recived Order!!!");           
         }
         else if (numbercar == 2)
         {
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000002","Pajero Sports","Mitsubishi","SUV",5000);
+            "000002","Pajero Sports","Mitsubishi","SUV",5000,CalculateDay(numberday));
             customerlist.Addnewcustomer(customer);
             Console.WriteLine("Recived Order!!!");            
         }
         else if (numbercar == 3)
         {
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000003","City 1.5","Honda","SUV",5000);
+            "000003","City 1.5","Honda","SUV",5000,CalculateDay(numberday));
             customerlist.Addnewcustomer(customer);
             Console.WriteLine("Recived Order!!!");          
         }
         else if (numbercar == 4)
         {
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000004","Almera 1.2","Nissan","SUV",5000);
+            "000004","Almera 1.2","Nissan","SUV",5000,CalculateDay(numberday));
             customerlist.Addnewcustomer(customer);
             Console.WriteLine("Recived Order!!!"); 
         }
         else if (numbercar == 5)
         {
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000005","Mu-X","ISUZU ","SUV",5000);
+            "000005","Mu-X","ISUZU ","SUV",5000,CalculateDay(numberday));
             customerlist.Addnewcustomer(customer);
             Console.WriteLine("Recived Order!!!");      
         } // เลือกรถจอง 
@@ -184,6 +187,12 @@ public class Program
     {
         customerlist.ShowCustomerclass();
         MenuCar();
+    }
+    static long CalculateDay(int numberday)
+    {
+        long currenttime = DateTime.Now.Ticks;
+        long future = currenttime + (numberday*864000000000);
+        return future;
     }
     static string InputPronoun()
     {
