@@ -16,7 +16,7 @@ public class Persondlist
 
     public void Showworker()
         {
-        Console.WriteLine("Information of Every customer.");
+        Console.WriteLine("Information of Every Worker.");
         foreach (Worker worker in this.personList)
         {
             Console.WriteLine("--------------------------------------------------");   

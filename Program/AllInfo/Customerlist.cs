@@ -45,14 +45,18 @@ using System;
                     Console.WriteLine(" Your return day : {0}",new DateTime(customer.GetDayreturn()));
                     Console.WriteLine(" Serialnumber : {0}",customer.Getserialnumber());
                     Console.WriteLine("--------------------------------------------------");   
+                    check = "Infoadded";
                 }
-                else Console.WriteLine("Invalid code");
-                check = "Infoadded";
+                else 
+                {
+                    check = "invalid";
+                }
             }
             if(check == "Noinfoinsystem")
             {
                 Console.WriteLine("There is no info in systems");
             }
+            else if(check == "invalid"){Console.WriteLine("Invalid code");}
         } 
     }
 

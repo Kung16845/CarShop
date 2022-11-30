@@ -30,7 +30,7 @@ public class Program
         Console.Clear();
         Console.WriteLine("Welcome To Car Rental Program");
         Console.WriteLine(" 1 : MenuLogin \n 2 : Carlist for rent \n 3 : Rent Status");
-        Console.WriteLine("Or Press any keys to Shutdown program.");
+        Console.WriteLine("Or Press any number to Shutdown program.");
         Menu menu = (Menu)(int.Parse(Console.ReadLine()));
         switch(menu)
         {
