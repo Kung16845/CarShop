@@ -1,0 +1,15 @@
+D:\Desktop\WorkSpace\MDT211\StupidTest\bin\Debug\net6.0\StupidTest.exe
+D:\Desktop\WorkSpace\MDT211\StupidTest\bin\Debug\net6.0\StupidTest.deps.json
+D:\Desktop\WorkSpace\MDT211\StupidTest\bin\Debug\net6.0\StupidTest.runtimeconfig.json
+D:\Desktop\WorkSpace\MDT211\StupidTest\bin\Debug\net6.0\StupidTest.dll
+D:\Desktop\WorkSpace\MDT211\StupidTest\bin\Debug\net6.0\StupidTest.pdb
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\StupidTest.csproj.AssemblyReference.cache
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\StupidTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\StupidTest.AssemblyInfoInputs.cache
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\StupidTest.AssemblyInfo.cs
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\StupidTest.csproj.CoreCompileInputs.cache
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\StupidTest.dll
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\refint\StupidTest.dll
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\StupidTest.pdb
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\StupidTest.genruntimeconfig.cache
+D:\Desktop\WorkSpace\MDT211\StupidTest\obj\Debug\net6.0\ref\StupidTest.dll
