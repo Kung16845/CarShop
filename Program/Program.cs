@@ -138,15 +138,19 @@ public class Program
         if (n == 1)
         {
             Signin();
+            AdminMode();
         }
         else if (n == 2)
         {
             Console.Clear();
             OutputDataCustomerAdmin();
+            AdminMode();
         }
         else if (n == 3)
         {
+            Console.Clear();
             WorkerData();
+            AdminMode();
         }
         else if (n == 0)
         {
@@ -171,11 +175,11 @@ public class Program
         }
         else 
         {
+            persondlist.AddNewPerson(new Worker(InputPronoun(),InputName(),InputSurName(),InputAge(),InputPosition()));  
             Console.WriteLine("Thank You for Register!!!!");
             emaillist.AddNewEmail(email);
-            MenuCar();
-        }  
-        persondlist.AddNewPerson(new Worker(InputPronoun(),InputName(),InputSurName(),InputAge(),InputPosition()));     
+            AdminMode();
+        }     
     }
     static void Login()
     {      
@@ -216,13 +220,11 @@ public class Program
     {
         customerlist.ShowCustomerclass();
         Thread.Sleep(10000);
-        MenuCar();
     }
     static void WorkerData()
     {
         persondlist.Showworker();
         Thread.Sleep(10000);
-        MenuCar();
     }
     static long CalculateDay(int numberday)
     {
