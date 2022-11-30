@@ -115,7 +115,7 @@ public class Program
             int numberday = int.Parse(Console.ReadLine());
             int code = Randompassword();      
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000003","City 1.5","Honda","SUV",numberday*900,CalculateDay(numberday),code);
+            "000003","City 1.5","Honda","Sedan",numberday*900,CalculateDay(numberday),code);
             customerlist.Addnewcustomer(customer);
             Console.Clear();
             Console.WriteLine("Recived Order!!!"); 
@@ -132,7 +132,7 @@ public class Program
             int numberday = int.Parse(Console.ReadLine());      
             int code = Randompassword();
             Customer customer = new Customer(InputPronoun(),InputName(),InputSurName(),InputAge(),
-            "000004","Almera 1.2","Nissan","SUV",numberday*870,CalculateDay(numberday),code);
+            "000004","Almera 1.2","Nissan","Sedan",numberday*870,CalculateDay(numberday),code);
             customerlist.Addnewcustomer(customer);
             Console.Clear();
             Console.WriteLine("Recived Order!!!"); 
@@ -244,8 +244,8 @@ public class Program
     {
         vehiclelist.AddNewVehicle(new Vehicleinfo("Fortuner","Toyota","SUV",780));
         vehiclelist.AddNewVehicle(new Vehicleinfo("Pajero Sports","Mitsubishi","SUV",1200));
-        vehiclelist.AddNewVehicle(new Vehicleinfo("City 1.5","Honda","SUV",900));
-        vehiclelist.AddNewVehicle(new Vehicleinfo("Almera 1.2","Nissan","SUV",870));
+        vehiclelist.AddNewVehicle(new Vehicleinfo("City 1.5","Honda","Sedan",900));
+        vehiclelist.AddNewVehicle(new Vehicleinfo("Almera 1.2","Nissan","Sedan",870));
         vehiclelist.AddNewVehicle(new Vehicleinfo("Mu-X","ISUZU ","SUV",922));
     }
     static void OutputDataCustomerAdmin()
