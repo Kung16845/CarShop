@@ -22,6 +22,7 @@ public class Persondlist
             Console.WriteLine("--------------------------------------------------");   
             Console.WriteLine("Type Worker \n {0}.{1} {2} Age : {3} Years Position : {4} "
             ,worker.Getpronound(),worker.GetName(),worker.Getsurname(),worker.Getage(),worker.GetPosition()); 
+            Console.WriteLine("Email:{0} \nPasswrod: {1}",worker.GetEmail(),worker.Getpassword());
             Console.WriteLine("--------------------------------------------------");   
         }
         }
